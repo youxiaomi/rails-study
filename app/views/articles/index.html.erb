@@ -1,0 +1,19 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+
+
+  <% @article.each do |f|  %>
+    <tr>
+      <td><%= f.title %></td>
+      <td><%= f.text %></td>
+      <td><%= link_to 'Destroy', article_path(f),
+                      method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end  %>
+</table>
